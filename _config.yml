@@ -1,0 +1,144 @@
+# Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Rum's Blog
+subtitle: Rum's Blog
+description: "明天会更好！"
+author: xiaoxiao
+email: wujialin0323@gmail.com
+#language
+language: zh-CN
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://www.pangjian.me
+root: /
+permalink: :year/:month/:day/:title/
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+highlight:
+  enable: true
+  line_number: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 1
+category: 2
+tag: 2
+
+# Server
+## Hexo uses Connect as a server
+## You can customize the logger format as defined in
+## http://www.senchalabs.org/connect/logger.html
+port: 4000
+server_ip: localhost
+logger: false
+logger_format: dev
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: MMM D YYYY
+time_format: H:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Disqus
+disqus_shortname:
+
+# Extensions
+## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
+## Themes: https://github.com/hexojs/hexo/wiki/Themes
+#theme: landscape-plus
+theme: material
+exclude_generator:
+
+plugins:
+- hexo-renderer-ejs
+- hexo-generator-feed
+- hexo-generator-seo-friendly-sitemap
+- hexo-generator-baidu-sitemap
+- hexo-tag-video
+- hexo-filter-indicate-the-source
+
+
+# Deployment
+## Docs: http://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:kuaiman/kuaiman.github.io.git
+  branch: master
+#  type: git
+#  repo: git@git.coding.net:pangjian/pangjian.git
+#  branch: gitcafe-pages
+# indicate-the-source
+indicate_the_source:
+  pattern: indicate-the-source
+  enable: true
+  render_engine: ejs
+  element_class: source
+  domain_white_list:
+    - pangjian.info
+    - www.pangjian.info
+    - pangjian.me
+    - www.pangjian.me
+    - localhost
+    - 127.0.0.1
+  template: "<blockquote class='source'><p>转载请注明出处：<%- post.permalink %></p><p>访问原文「<a href='<%- post.permalink %>'><%- post.title %></a>」获取最佳阅读体验并参与讨论</p></blockquote>"
+
+#hexo-generator-search
+search:
+  path: search.xml
+  field: post
+
+# Hexo Beautify
+beautify:
+  types:
+    - html
+  exclude:
+
+  html:
+    'indent_inner_html': false
+    'indent_size': 2
+    'indent_with_tabs': false
+    # More Options (https://github.com/beautify-web/js-beautify/blob/master/README.md)
+  css:
+    'indent_size': 2
+    'newline_between_rules': true
+    'indent_with_tabs': false
+    # More Options (https://github.com/beautify-web/js-beautify/blob/master/README.md)
+  js:
+    'indent_size': 2
+    'indent_with_tabs': false
+    # More Options (https://github.com/beautify-web/js-beautify/blob/master/README.md)
